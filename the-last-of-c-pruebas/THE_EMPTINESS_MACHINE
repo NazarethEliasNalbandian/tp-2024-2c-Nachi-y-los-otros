@@ -1,0 +1,10 @@
+SET AX 10
+SET BX 1
+PROCESS_CREATE ../../the-last-of-c-pruebas/PLANI_PROC 16 0
+PROCESS_CREATE ../../the-last-of-c-pruebas/RECURSOS_MUTEX_PROC 16 0
+PROCESS_CREATE ../../the-last-of-c-pruebas/MEM_FIJA_BASE 12 0
+PROCESS_CREATE ../../the-last-of-c-pruebas/MEM_DINAMICA_BASE 128 0
+PROCESS_CREATE ../../the-last-of-c-pruebas/PRUEBA_FS 32 0
+SUB AX BX
+JNZ AX 2
+PROCESS_EXIT

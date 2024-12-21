@@ -1,0 +1,12 @@
+SET AX 5
+SET BX 1
+PROCESS_CREATE ../../the-last-of-c-pruebas/FIBO_CROWN 96 0
+PROCESS_CREATE ../../the-last-of-c-pruebas/FIBO_10 64 1
+PROCESS_CREATE ../../the-last-of-c-pruebas/FIBO_20 128 1
+PROCESS_CREATE ../../the-last-of-c-pruebas/FIBO_30 256 1
+PROCESS_CREATE ../../the-last-of-c-pruebas/FIBO_40 256 1
+PROCESS_CREATE ../../the-last-of-c-pruebas/FIBO_47 256 1
+SUB AX BX
+IO 10000
+JNZ AX 3
+PROCESS_EXIT

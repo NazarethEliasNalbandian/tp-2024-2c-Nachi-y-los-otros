@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "valgrind",
+			"target": "${command:cmake.launchTargetPath}",
+			"problemMatcher": [
+				"$valgrind"
+			],
+			"label": "valgrind: valgrind",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
