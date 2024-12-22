@@ -1,3 +1,55 @@
+# Descripción
+
+El Trabajo Práctico trata sobre un emulador de un sistema operativo programado en un lenguaje de relativo bajo nivel como C.
+
+Éste se despliega en un sistema distribuido y sus módulos se conectan por red y se envían mensajes serializados.
+
+Los módulos son Kernel, CPU, Memoria y Filesystem.
+
+# Kernel
+
+Se ocupa de gestionar la creación, finalización, ejecución y bloqueo de los procesos e hilos.
+
+Posee un planificador corto plazo que decide qué hilo ejecutará mandando sus identificadores a CPU.
+
+Este planificicador puede utilizar un algoritmo de planificación de FIFO, Prioridades o Cola Multinivel con Round Robin según los archivos de configuración.
+
+Posee un planificador de largo plazo que crea y elimina procesos e hilos comunicándolo a Memoria para que actualice la memoria del sistema.
+
+# CPU
+
+Recibe hilos que ejecutan instrucciones, algunas instrucciones pueden ser Syscalls y deberá comunicarselo a Kernel para que actúe en consecuencia.
+
+También, puede recibir interrupciones por parte de Kernel y se desalojará el hilo en ejecución.
+
+Solicita las instrucciones a Memoria.
+
+# Memoria
+
+Utiliza un sistema de Particionamiento para almacenar los procesos recibidos por Kernel.
+
+Este sistema puede ser de Particionamiento Fijo o Dinámico según los archivos de configuración.
+
+Envía las instrucciones a CPU y escribe o lee en la Memoria de Usuario en caso de que el hilo ejecute las instrucciones READ_MEM, WRITE_MEM o DUMP_MEMORY.
+
+# Filesystem
+
+Utiliza un sistema de asignación de bloques indexada.
+
+Memoria le envía la información escrita por un proceso entre todos sus hilos.
+
+Ante esto, Filesystem almacena esa información en bloques de datos.
+
+Almacena el índice de los bloques de datos en un bloque extra que es el bloque de índices.
+
+Almacena por cada DUMP_MEMORY un archivo de metadata que incluye el índice del bloque de índice y el tamaño del archivo.
+
+Posee un archivo de bitmap que permite saber que bloques están libres.
+
+# Enunciado
+
+El enunciado se encuentra en el archivo The Last Of C
+
 # tp-scaffold
 
 Esta es una plantilla de proyecto diseñada para generar un TP de Sistemas
@@ -117,7 +169,8 @@ cd so-deploy
 
 Ponemos la contraseña para sudo: utnso
 
-Usuario: guadaabdel
+Usuario: usuarioGitHub
+Contraseña: tokenGithub
 
 ## PRUEBA PLANI (FUNCIONA)
 
